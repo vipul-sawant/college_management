@@ -1,0 +1,42 @@
+<form name="form.login_user" method="post" ng-submit = "form.login_user.$valid && log_user()" class="d-flex form flex-start flex-column" novalidate>
+
+	<div class="detail_box d-flex m-2" ng-class="{input_error: (form.login_user.$submitted || form.login_user.uname.$dirty) && (form.login_user.uname.$error.required || wrong_uname)}">
+		<label for="uname">
+			<i class="fa-regular far fa-user icon"></i>
+		</label>
+		<input type="text" name="uname" id="uname" ng-model="user.uname"  class="detail_input" placeholder="Enter your username" required />
+	</div>
+	
+	
+	<div class="detail_box d-flex m-2" ng-class="{input_error: (form.login_user.$submitted || form.login_user.pass.$dirty) && (form.login_user.pass.$error.required || wrong_pass)}">
+		<label for="pass">
+			<i class="fa-solid fas fa-lock icon"></i>
+		</label>
+		<input type="{{inputType}}" name="pass" id="pass" ng-model = "user.pass" class="detail_input" placeholder="Enter your password" required />
+		<i class="{{eye}} icon" ng-click="view_pass()"></i>
+	</div>
+
+	<div class="button_box d-flex m-2 justify-content-between align-items-center">
+		<a href="../index.html"><i class="fa-solid fas fa-house fa-home icon" style="font-size:30px;"></i></a>
+		<button type="submit" class="button w-50 margin-5-tb" ng-disabled="false">Sign In</button>
+	</div>
+
+	<!-- <div class="button_box flex w-100 margin-5-tb space_evenly">
+		<span class="signUp"> New User ?<a href="admin_register.html" style="text-decoration: none; margin-left: 5px; color: var(--jonquil);">Click Here.</a></span>
+	</div> -->
+
+	<div class="button_box d-flex m-2 justify-content-center">
+		<span class="signUp"> New User ?<a href="admin_register.html" style="text-decoration: none; margin-left: 5px; color: var(--jonquil);">Click Here.</a></span>
+	</div>
+
+	<!-- <span ng-class="{'error': true, 'message':true, 'margin-5-tb':true}" ng-show = "(form.login_user.$submitted || form.login_user.uname.$dirty) && form.login_user.uname.$error.required" class="error_message"> Kindly Enter Your Username !! </span> -->
+
+	<span ng-class="{'error': true, 'message':true}" ng-show = "(form.login_user.$submitted || (form.login_user.uname.$dirty || form.login_user.pass.$dirty)) && (form.login_user.uname.$error.required || form.login_user.pass.$error.required)" class="error_message"> Enter fields with red border </span>
+
+	<label ng-class="{'error': true, 'message':true, 'margin-5-tb':true}" ng-show="wrong_uname" class="error_message"> Enter Correct Username </label>
+
+	<!-- <span ng-class="{'error': true, 'message':true, 'margin-5-tb':true}" ng-show = "(form.login_user.$submitted || form.login_user.pass.$dirty) && form.login_user.pass.$error.required" class="error_message"> Kindly Enter Your password !! </span> -->
+
+	<label ng-class="{'error': true, 'message':true, 'margin-5-tb':true}" ng-show="wrong_pass" class="error_message"> Enter Correct Password </label>
+
+</form>

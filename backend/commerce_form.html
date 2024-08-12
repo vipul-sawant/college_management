@@ -1,0 +1,129 @@
+<!-- <div class="row">
+    <div class="col-lg-2">
+        <label for="bk">BK :</label>
+    </div>
+    <div class="col-lg-3">
+        <input type="number" id="bk" name="bk"  ng-model = "student.bk" ng-min="0" ng-max="100"  required />
+    </div>
+    <div class="col-lg-7">
+        <p ng-show = "(form.addmission_portal.$submitted || form.addmission_portal.bk.$dirty) && form.addmission_portal.bk.$error.required">
+            Please Enter English Marks.
+        </p>
+
+        <p ng-show = " form.addmission_portal.bk.$dirty && form.addmission_portal.bk.$error.min">
+            Minimum 0.
+        </p>
+
+        <p ng-show = " form.addmission_portal.bk.$dirty && form.addmission_portal.bk.$error.max">
+            Maximum 100.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-2">
+        <label for="oc">OC :</label>
+    </div>
+    <div class="col-lg-3">
+        <input type="number" id="oc" name="oc"  ng-model = "student.oc" ng-min="0" ng-max="100"  required />
+    </div>
+    <div class="col-lg-7">
+        <p ng-show = "(form.addmission_portal.$submitted || form.addmission_portal.oc.$dirty) && form.addmission_portal.oc.$error.required">
+            Please Enter English Marks.
+        </p>
+
+        <p ng-show = " form.addmission_portal.oc.$dirty && form.addmission_portal.oc.$error.min">
+            Minimum 0.
+        </p>
+
+        <p ng-show = " form.addmission_portal.oc.$dirty && form.addmission_portal.oc.$error.max">
+            Maximum 100.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-2">
+        <label for="economics"> Economics :</label>
+    </div>
+    <div class="col-lg-3">
+        <input type="number" id="economics" name="economics"  ng-model = "student.economics" ng-min="0" ng-max="100"  required />
+    </div>
+    <div class="col-lg-7">
+        <p ng-show = "(form.addmission_portal.$submitted || form.addmission_portal.economics.$dirty) && form.addmission_portal.economics.$error.required">
+            Please Enter English Marks.
+        </p>
+
+        <p ng-show = " form.addmission_portal.economics.$dirty && form.addmission_portal.economics.$error.min">
+            Minimum 0.
+        </p>
+
+        <p ng-show = " form.addmission_portal.economics.$dirty && form.addmission_portal.economics.$error.max">
+            Maximum 100.
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-2">
+        <label for="sp"> SP :</label>
+    </div>
+    <div class="col-lg-3">
+        <input type="number" id="sp" name="sp"  ng-model = "student.sp" ng-min="0" ng-max="100"  required />
+    </div>
+    <div class="col-lg-7">
+        <p ng-show = "(form.addmission_portal.$submitted || form.addmission_portal.sp.$dirty) && form.addmission_portal.sp.$error.required">
+            Please Enter English Marks.
+        </p>
+
+        <p ng-show = " form.addmission_portal.sp.$dirty && form.addmission_portal.sp.$error.min">
+            Minimum 0.
+        </p>
+
+        <p ng-show = " form.addmission_portal.sp.$dirty && form.addmission_portal.sp.$error.max">
+            Maximum 100.
+        </p>
+    </div>
+</div> -->
+
+<div class="m-2">
+    <label for="bk" class="heading fw-bold">
+        BK : 
+    </label>
+</div>
+<!-- </div> -->
+<!-- <div>{{getUrl()}}</div> -->
+
+<div class="detail_box d-flex m-2" ng-class="{'input_error':form.addmission_portal.bk.$dirty && (form.addmission_portal.bk.$error.min || form.addmission_portal.bk.$error.max || form.addmission_portal.bk.$error.required)}">
+<input type="number" class="detail_input" ng-min="0" ng-max="100" required id="bk" name="bk"  ng-model = "student.bk" placeholder="Enter BK Marks Here" />
+</div>
+
+<div class="m-2">
+<label for="oc" class="heading fw-bold">
+    OC : 
+</label>
+</div>
+
+<div class="detail_box d-flex m-2" ng-class="{'input_error':form.addmission_portal.oc.$dirty && (form.addmission_portal.oc.$error.min || form.addmission_portal.oc.$error.max || form.addmission_portal.oc.$error.required)}">
+<input type="number" class="detail_input" ng-min="0" ng-max="100" required id="oc" name="oc"  ng-model = "student.oc"/>
+</div>
+
+<div class="m-2">
+<label for="economics" class="heading fw-bold">
+    Economics : 
+</label>
+</div>
+
+<div class="detail_box d-flex m-2" ng-class="{'input_error':form.addmission_portal.economics.$dirty && (form.addmission_portal.economics.$error.min || form.addmission_portal.economics.$error.max || form.addmission_portal.economics.$error.required)}">
+<input type="number" class="detail_input" ng-min="0" ng-max="100" required id="economics" name="economics"  ng-model = "student.economics"/>
+</div>
+
+
+<div class="m-2">
+<label for="sp" class="heading fw-bold">
+    SP : 
+</label>
+</div>
+
+<div class="detail_box d-flex m-2" ng-class="{'input_error':form.addmission_portal.sp.$dirty && (form.addmission_portal.sp.$error.min || form.addmission_portal.sp.$error.max || form.addmission_portal.sp.$error.required)}">
+<input type="number" class="detail_input" ng-min="0" ng-max="100" required id="sp" name="sp"  ng-model = "student.sp"/>
+</div>

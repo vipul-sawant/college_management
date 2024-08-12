@@ -1,0 +1,135 @@
+	<div class="detail_box" ng-class="{input_error: ((form.admission_portal.$submitted || form.admission_portal.fName.$dirty) && (form.admission_portal.fName.$error.required || form.admission_portal.fName.$error.namePattern))}">
+		<label for="fName"> 
+			<i class="fa-regular far fa-user icon"></i>
+		</label>
+		<input type="text" id="fName" class="detail_input" name="fName" ng-model = "student.fName" placeholder=" Enter First Name Here " validate-name required>
+	</div>
+	<!-- <p ng-bind="">required :</p> -->
+	<!-- <p>{{form.admission_portal.$submitted}}</p> -->
+	<div class="detail_box" ng-class="{input_error: (form.admission_portal.mName.$dirty && form.admission_portal.mName.$error.namePattern)}">
+		<label for="mName"> 
+			<i class="fa-regular far fa-user icon"></i>
+		</label>
+		<input type="text" id="mName" class="detail_input" name="mName" ng-model = "student.mName" placeholder=" Enter Middle Name Here " validate-name>
+	</div>
+
+	<div class="detail_box" ng-class="{input_error: ((form.admission_portal.$submitted || form.admission_portal.lName.$dirty) && (form.admission_portal.lName.$error.required || form.admission_portal.lName.$error.namePattern))}">
+		<label for="lName"> 
+			<i class="fa-regular far fa-user icon"></i>
+		</label>
+		<input type="text" id="lName" class="detail_input" name="lName" ng-model = "student.lName" placeholder=" Enter Last Name Here " validate-name required>
+	</div>
+
+	<div class="detail_box" ng-class="{input_error: ((form.admission_portal.$submitted || form.admission_portal.dob.$dirty) && form.admission_portal.dob.$error.required)}">
+		<label for="dob"> 
+			<!-- <i class="fa-solid fas fa-calendar icon"></i> -->
+			<i class="fa-regular far fa-calendar icon"></i>
+		</label>
+		<input type="text" id="dob" class="detail_input" name="dob"  ng-model = "student.dob" placeholder="Select Birth Date Here" required onfocus="(this.type='date')" onblur="(this.type='text')">
+	</div>
+
+	<div class="detail_box" ng-class="{input_error: ((form.admission_portal.$submitted || form.admission_portal.phone.$dirty) && (form.admission_portal.phone.$error.required || form.admission_portal.phone.$error.phoneExist || form.admission_portal.phone.$error.minlength || form.admission_portal.phone.$error.maxlength || form.admission_portal.phone.$error.pattern))}">
+		<label for="phone"> 
+			<i class="fa-solid fas fa-mobile icon"></i>
+		</label>
+		<!-- <input type="text" id="lName" class="detail_input" name="lName" ng-model = "student.lName" placeholder=" Enter Last Name " validate-name required> -->
+		<input type="text" id="phone" class="detail_input" name="phone"  ng-model = "student.phone" ng-pattern = "/^[0-9]{1,}$/" ng-minlength="10" ng-maxlength="10" validate-details placeholder="Enter Phone Number Here" required>
+	</div>
+
+	<div class="detail_box" ng-class="{input_error: ((form.admission_portal.$submitted || form.admission_portal.email.$dirty) && (form.admission_portal.email.$error.required || form.admission_portal.email.$error.emailExist || form.admission_portal.email.$error.pattern))}">
+		<label for="email"> 
+			<i class="icon fa-solid fas fa-envelope-open"></i>
+		</label>
+
+		<input type="email" id="email" class="detail_input" name="email"  ng-model = "student.email"  ng-pattern = "/[a-z0-9]+@[a-z]+\.[a-z]/" validate-details placeholder="Enter Email Here" required>
+	</div>
+
+	<div class="detail_box" ng-class="{input_error: ((form.admission_portal.$submitted || form.admission_portal.address.$dirty) && (form.admission_portal.address.$error.required))}">
+		<label for="address"> 
+			<i class="fa-solid fas fa-location-dot icon"></i>
+			<!-- <i class="fa-solid fas fa-map-location-dot icon"></i> -->
+		</label>
+
+		<textarea id="address" class="detail_input" name="address" ng-model = "student.address" required placeholder="Enter Address Here"></textarea>
+	</div>
+
+	<!-- <div0> -->
+		<div class="detail_box" ng-if="classDetails" ng-class="{input_error: ((form.admission_portal.$submitted || form.admission_portal.class.$dirty) && (form.admission_portal.class.$error.required))}">
+			<label for="class"> 
+				<!-- <i class=" icon"></i> -->
+				<i class="fa-solid fas fa-school icon"></i>
+			</label>
+			<select id="class" name="class" class="detail_input" ng-model="student.classes" id="class" ng-options="item.class_id as item.name for item in class" required>
+				<option value="" selected>Select From Below Options</option>
+				<!-- <option></option> -->
+			</select>
+		</div>
+	<!-- </div> -->
+
+	<div id="errors_display">
+		<div class="weak message m-2" ng-show = "((form.admission_portal.$submitted || form.admission_portal.fName.$dirty || form.admission_portal.lName.$dirty || form.admission_portal.dob.$dirty || form.admission_portal.phone.$dirty || form.admission_portal.email.$dirty || form.admission_portal.address.$dirty || form.admission_portal.class.$dirty) && (form.admission_portal.fName.$error.required || form.admission_portal.lName.$error.required || form.admission_portal.dob.$error.required || form.admission_portal.phone.$error.required || form.admission_portal.email.$error.required || form.admission_portal.address.$error.required || form.admission_portal.class.$error.required))">
+			Please enter fields with red border.
+		</div>
+		<!-- <p>{{form.admission_portal.$submitted}}</p> -->
+		<!-- <p>{{form.admission_portal.fName.$dirty}}</p> -->
+		<!-- <p>{{form.admission_portal.lName.$dirty}}</p> -->
+		<!-- <p>{{form.admission_portal.dob.$dirty}}</p> -->
+		<!-- <p>{{form.admission_portal.phone.$dirty}}</p> -->
+		<!-- <p>{{form.admission_portal.email.$dirty}}</p> -->
+		<!-- <p>{{form.admission_portal.address.$dirty}}</p> -->
+		<!-- <p>{{form.admission_portal.class.$dirty}}</p> -->
+		<!-- <p>{{form.admission_portal.class.$dirty}}</p> -->
+
+		<!-- <p>{{}}</p> -->
+		<!-- <p>{{form.admission_portal.fName.$error.required}}</p> -->
+		<!-- <div class="error message" ng-show = "(form.admission_portal.$submitted || form.admission_portal.fName.$dirty) && form.admission_portal.fName.$error.required">
+			Please Enter First Name.
+		</div> -->
+		<div class="error message m-2" ng-show = " (form.admission_portal.fName.$dirty || form.admission_portal.mName.$dirty || form.admission_portal.lName.$dirty) && (form.admission_portal.fName.$error.namePattern || form.admission_portal.mName.$error.namePattern ||form.admission_portal.lName.$error.namePattern)">
+			Name can only be A to Z and a to z
+		</div>
+		
+		<!-- <div class="error message" ng-show = "(form.admission_portal.$submitted || form.admission_portal.lName.$dirty) && form.admission_portal.lName.$error.required">
+			Please Enter Last Name.
+		</div> -->
+		
+		<!-- <div class="error message" ng-show = "form.admission_portal.dob.$submitted && form.admission_portal.dob.$error.required">
+			Please Enter Date of Birth :
+		</div> -->
+		
+		<!-- <div class="error message" ng-show = "(form.admission_portal.$submitted || form.admission_portal.phone.$dirty) && form.admission_portal.phone.$error.required">
+			Please enter Phone number.
+		</div> -->
+		<div class="error message m-2" ng-show = "form.admission_portal.phone.$dirty && form.admission_portal.phone.$error.pattern">
+			Phone number should only be numbers.
+		</div>
+		<div class="error message m-2" ng-show = "form.admission_portal.phone.$dirty && !form.admission_portal.phone.$error.pattern && (form.admission_portal.phone.$error.minlength || form.admission_portal.phone.$error.maxlength)">
+			Phone number should be 10 digits.
+		</div>
+		<div class="error message m-2" ng-show = "form.admission_portal.phone.$dirty && form.admission_portal.phone.$error.phoneExist">
+			This number is already registered with different student.
+		</div>
+		
+		<!-- <div class="error message" ng-show = "(form.admission_portal.$submitted || form.admission_portal.email.$dirty) && form.admission_portal.email.$error.required">
+			Please Enter E-mail ID.
+		</div> -->
+		<div class="error message m-2" ng-show = " form.admission_portal.email.$dirty && form.admission_portal.email.$error.pattern">
+			Please Enter in  the format someone@email.com
+		</div>
+		<div class="error message m-2" ng-show = "form.admission_portal.email.$dirty && form.admission_portal.email.$error.emailExist">
+			This email is already registered with different student.
+		</div>
+		
+		<!-- <div class="error message" ng-show = "(form.admission_portal.$submitted || form.admission_portal.address.$dirty) && form.admission_portal.address.$error.required">
+			Please Enter your Address.
+		</div> -->
+		
+		<!-- <div class="error message" ng-show = "form.admission_portal.$submitted && form.admission_portal.class.$error.required">
+			Please Allot Class.
+		</div> -->
+
+		<!-- <P>{{form.admission_portal.$submitted}}</P> -->
+		<!-- <p>{{form.admission_portal.class.$error.required}}</p> -->
+		
+	</div>
+</form>

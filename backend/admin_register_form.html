@@ -1,0 +1,81 @@
+<form name="form.register_user" method="post" ng-submit = "form.register_user.$valid && addUser()" class="d-flex form flex-start flex-column" novalidate>
+	
+	<!-- <label for="name">Username</label>
+
+	<input type="text" name="name" id="name" ng-model="user.name" ng-minlength="4" validate-username required /> -->
+
+	<div class="detail_box d-flex m-2" ng-class="{input_error: (form.register_user.$submitted || form.register_user.name.$dirty) && (form.register_user.name.$error.usernamePattern || form.register_user.name.$error.usernamePattern2 || form.register_user.name.$error.usernamePattern3 || form.register_user.name.$error.minlength || form.register_user.name.$error.usernameExist || form.register_user.name.$error.required )}">
+		<label for="name">
+			<i class="fa-regular far fa-user icon"></i>
+		</label>
+		<input type="text" name="name" id="name" ng-model="user.name" ng-minlength="4" validate-username placeholder="Create an Username"  class="detail_input" required autocomplete="off" />
+	</div>
+
+		<!-- <div ng-class="{'weak': true, 'message':true}" ng-show = "(form.register_user.$submitted || form.register_user.name.$dirty) && (form.register_user.name.$error.required )"> Kindly create a Username !! </div>
+		
+		<div ng-class="{'weak': true, 'message':true}" ng-show = "form.register_user.name.$error.usernamePattern2 && form.register_user.name.$error.usernameExist === undefined"> Username should Start with an Alphabet only </div>
+
+		<div ng-class="{'weak': true, 'message':true}" ng-show = "form.register_user.name.$error.usernamePattern3 && form.register_user.name.$error.usernameExist === undefined"> Username cannot end with a . </div>
+
+		<div ng-class="{'weak': true, 'message':true}" ng-show = "form.register_user.name.$error.usernamePattern && form.register_user.name.$error.usernameExist === undefined"> Username can have only a to z, A to Z, 0 to 9 or  _ .</div>
+
+		<div ng-class="{'weak': true, 'message':true}" ng-show="(form.register_user.$submitted || form.register_user.name.$dirty) && form.register_user.name.$error.minlength"> Please create a  username with atleast 4 characters </div>
+
+		<p ng-class = "{'message':true, 'weak':true}" ng-show="form.register_user.name.$error.usernameExist"> Username Unavailable </p> -->
+		
+		<div class="detail_box d-flex m-2" ng-class="{input_error: (form.register_user.$submitted || form.register_user.pass.$dirty) && (form.register_user.pass.$error.required || strength === 'weak' )}">
+			<label for="pass">
+				<i class="fa-solid fas fa-lock icon"></i>
+			</label>
+			<input type="{{pInputType}}" name="pass" id="pass" ng-model = "user.pass" class="detail_input" placeholder = "Create a Password" ng-change="checkPasswordStrength();getPasswordStrengthStyle()" required autocomplete = "new-password" />
+			<i class="{{pEye}}" ng-click="pViewPass()"></i>
+		</div>
+
+	<!-- <label for="pass">Password</label>
+	
+	<input type="{{inputType}}" name="pass" id="pass" ng-model = "user.pass" ng-change="checkPasswordStrength();getPasswordStrengthStyle()" required />
+	<p> Show Password <input type="checkbox" ng-click = "view_pass()"> </p> -->
+
+		<!-- <div ng-class="{'weak': true, 'message':true}" ng-show = "(form.register_user.$submitted || form.register_user.pass.$dirty) && form.register_user.pass.$error.required"> kindly create a  password !! </div>
+		
+		<p ng-if="strength === 'strong' && form.register_user.pass.$error.required === undefined" ng-class = "{'message':true, 'strong':true}"> Strong </p>
+
+		<p ng-if="strength === 'fair' && form.register_user.pass.$error.required === undefined" ng-class = "{'message':true, 'fair':true}"> Fair </p>
+
+		<p ng-if="strength === 'weak' && form.register_user.pass.$error.required === undefined" ng-class = "{'message':true, 'weak':true}"> Weak </p> -->
+
+		<div class="detail_box d-flex m-2" ng-class="{input_error: (form.register_user.$submitted || form.register_user.cPass.$dirty) && (form.register_user.cPass.$error.required || form.register_user.cPass.$error.compareTo)}">
+			<label for="cPass">
+				<i class="fa-solid fas fa-lock icon"></i>
+			</label>
+			<input type="{{cInputType}}" name="cPass" id="cPass" ng-model = "user.cPass" class="detail_input" required placeholder="Enter above Password" autocomplete="new-password" compare-to="user.pass" />
+			<i class="{{cEye}}" ng-click="cViewPass()"></i>
+		</div>
+	<!-- <label for="cPass">Confirm Password</label>
+	<input type="{{inputType}}" name="cPass" id="cPass" ng-model = "user.cPass" required compare-to="user.pass" /> -->
+
+		<!-- <div ng-class="{'weak': true, 'message':true}" ng-show = "(form.register_user.$submitted || form.register_user.cPass.$dirty) && form.register_user.cPass.$error.required"> Kindly enter confirm password !! </div>
+
+		<div ng-class="{'weak': true, 'message':true}" ng-show = "form.register_user.cPass.$dirty && form.register_user.cPass.$error.compareTo"> confirm password and Password does not match </div> -->
+
+
+		<div class="button_box d-flex m-2 justify-content-between align-items-center">
+			<a href="../index.html" class="m-2">
+				<i class="fa-solid fas fa-home" style="font-size:30px; color: var(--yale-blue);"></i>
+			</a>
+			
+			<button type="submit" class="fw-bold back w-50 m-2">Sign Up</button>
+		</div>
+
+	<!-- <button type="submit">Sign Up</button> -->
+
+	
+
+	<div class="button_box d-flex justify-content-center">
+		<span class="signUp" style="color: var(--yale-blue); font-weight: bolder;">Already an Admin ? <a href="admin_login.html" style="text-decoration: none; margin-left: 5px; color: var(--jonquil);">Click Here.</a></span>
+	</div>
+
+	<!-- <p>ALready an Admin?<a href="./admin_login.html">Click Here.</a></p> -->
+</form>
+
+<!-- <p> Confirm Password {{form.register_user.cPass.$error}}</p> -->

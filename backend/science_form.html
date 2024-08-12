@@ -1,0 +1,132 @@
+<!-- <div class="row">
+    <div class="col-lg-2">
+        <label for="physics">Physics :</label>
+    </div>
+    <div class="col-lg-3">
+        <input type="number" id="physics" name="physics"  ng-model = "student.physics" ng-min="0" ng-max="100"  required />
+    </div>
+    <div class="col-lg-7">
+        <p ng-show = "(form.addmission_portal.$submitted || form.addmission_portal.physics.$dirty) && form.addmission_portal.physics.$error.required">
+            Please Enter English Marks.
+        </p>
+
+        <p ng-show = " form.addmission_portal.physics.$dirty && form.addmission_portal.physics.$error.min">
+            Minimum 0.
+        </p>
+
+        <p ng-show = " form.addmission_portal.physics.$dirty && form.addmission_portal.physics.$error.max">
+            Maximum 100.
+        </p>
+    </div>
+</div> -->
+<!-- <div ng-if="getUrl() === 'view_result.php'"> -->
+    <div class="m-2">
+        <label for="physics" class="heading fw-bold">
+            Physics : 
+        </label>
+    </div>
+<!-- </div> -->
+<!-- <div>{{getUrl()}}</div> -->
+
+<div class="detail_box d-flex m-2" ng-class="{'input_error':form.addmission_portal.physics.$dirty && (form.addmission_portal.physics.$error.min || form.addmission_portal.physics.$error.max || form.addmission_portal.physics.$error.required)}">
+    <input type="number" class="detail_input" ng-min="0" ng-max="100" required id="physics" name="physics"  ng-model = "student.physics" placeholder="Enter Physics Marks Here" />
+</div>
+
+<div class="m-2">
+    <label for="chemistry" class="heading fw-bold">
+        Chemistry : 
+    </label>
+</div>
+
+<div class="detail_box d-flex m-2" ng-class="{'input_error':form.addmission_portal.chemistry.$dirty && (form.addmission_portal.chemistry.$error.min || form.addmission_portal.chemistry.$error.max || form.addmission_portal.chemistry.$error.required)}">
+    <input type="number" class="detail_input" ng-min="0" ng-max="100" required id="chemistry" name="chemistry"  ng-model = "student.chemistry"/>
+</div>
+
+<div class="m-2">
+    <label for="biology" class="heading fw-bold">
+        Biology : 
+    </label>
+</div>
+
+<div class="detail_box d-flex m-2" ng-class="{'input_error':form.addmission_portal.biology.$dirty && (form.addmission_portal.biology.$error.min || form.addmission_portal.biology.$error.max || form.addmission_portal.biology.$error.required)}">
+    <input type="number" class="detail_input" ng-min="0" ng-max="100" required id="biology" name="biology"  ng-model = "student.biology"/>
+</div>
+
+
+<div class="m-2">
+    <label for="cs" class="heading fw-bold">
+        CS : 
+    </label>
+</div>
+
+<div class="detail_box d-flex m-2" ng-class="{'input_error':form.addmission_portal.cs.$dirty && (form.addmission_portal.cs.$error.min || form.addmission_portal.cs.$error.max || form.addmission_portal.cs.$error.required)}">
+    <input type="number" class="detail_input" ng-min="0" ng-max="100" required id="cs" name="cs"  ng-model = "student.cs"/>
+</div>
+
+
+
+
+<!-- <div class="row">
+    <div class="col-lg-2">
+        <label for="chemistry">Chemistry :</label>
+    </div>
+    <div class="col-lg-3">
+        <input type="number" id="chemistry" name="chemistry"  ng-model = "student.chemistry" ng-min="0"  ng-max="100" required />
+    </div>
+    <div class="col-lg-7">
+        <p ng-show = "(form.addmission_portal.$submitted || form.addmission_portal.chemistry.$dirty) && form.addmission_portal.chemistry.$error.required">
+            Please Enter English Marks.
+        </p>
+
+        <p ng-show = " form.addmission_portal.chemistry.$dirty && form.addmission_portal.chemistry.$error.min">
+            Minimum 0.
+        </p>
+
+        <p ng-show = " form.addmission_portal.chemistry.$dirty && form.addmission_portal.chemistry.$error.max">
+            Maximum 100.
+        </p>
+    </div>
+</div> -->
+
+<!-- <div class="row">
+    <div class="col-lg-2">
+        <label for="biology"> Biology :</label>
+    </div>
+    <div class="col-lg-3">
+        <input type="number" id="biology" name="biology"  ng-model = "student.biology" ng-min="0" ng-max="100"  required />
+    </div>
+    <div class="col-lg-7">
+        <p ng-show = "(form.addmission_portal.$submitted || form.addmission_portal.biology.$dirty) && form.addmission_portal.biology.$error.required">
+            Please Enter English Marks.
+        </p>
+
+        <p ng-show = " form.addmission_portal.biology.$dirty && form.addmission_portal.biology.$error.min">
+            Minimum 0.
+        </p>
+
+        <p ng-show = " form.addmission_portal.biology.$dirty && form.addmission_portal.biology.$error.max">
+            Maximum 100.
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-2">
+        <label for="cs"> CS :</label>
+    </div>
+    <div class="col-lg-3">
+        <input type="number" id="cs" name="cs"  ng-model = "student.cs" ng-min="0" ng-max="100"  required />
+    </div>
+    <div class="col-lg-7">
+        <p ng-show = "(form.addmission_portal.$submitted || form.addmission_portal.cs.$dirty) && form.addmission_portal.cs.$error.required">
+            Please Enter English Marks.
+        </p>
+
+        <p ng-show = " form.addmission_portal.cs.$dirty && form.addmission_portal.cs.$error.min">
+            Minimum 0.
+        </p>
+
+        <p ng-show = " form.addmission_portal.cs.$dirty && form.addmission_portal.cs.$error.max">
+            Maximum 100.
+        </p>
+    </div>
+</div> -->

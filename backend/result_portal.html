@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="../node_modules/angular/angular.min.js"></script>
+    <link rel="stylesheet" href="../utilities/css/basics.css">
+    <title> Result Portal </title>
+    <style>
+        #container{
+            background: none;
+        }
+        .box{
+            margin: 12px auto;
+            background-color: var(--jonquil);
+        }
+        .add{
+            border: none;
+            border-radius: 15px;
+            padding: 12px;
+            outline: none;
+            background-color: var(--yale-blue);
+            color: var(--beige);
+        }
+        .view{
+            border: none;
+            border-radius: 15px;
+            padding: 12px;
+            outline: none;
+            background-color: var(--beige);
+            color: var(--yale-blue);
+        }
+        .heading{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- <a href="new_dashboard.php">Home</a>
+    <br>
+    <a href="add_student_form.php">Addmission Portal</a> -->
+    <div ng-app="result_portal" ng-controller="result_control" class="d-flex" id="container">
+        <div ng-include="'sidebar.php'" id="sidebar" class="sidebar d-flex flex-column"></div>    
+        <div class="classes_container row content" id="content">
+            <h1 class="h2 text-center">Result Management</h1>
+            <div ng-repeat="item in classes" class="col-md-6">
+                <div class="box">
+                    <h1 class="h2 fw-bold heading">{{item.name}}</h1>
+                    <div class="btn_wrapper d-flex flex-column">
+                        <button type="button" class="m-1 add poppins-black-italic" ng-click="addResult(item.class_id, item.name)">Add Result</button>
+                        <button type="button" class="m-1 view poppins-black-italic" ng-click="viewResult(item.class_id)">View Result</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../utilities/js/result_portal.js"></script>
+</body>
+</html>

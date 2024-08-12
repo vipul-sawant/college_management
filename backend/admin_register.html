@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="../node_modules/angular/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js" integrity="sha512-TZlMGFY9xKj38t/5m2FzJ+RM/aD5alMHDe26p0mYUMoCF5G7ibfHUQILq0qQPV3wlsnCwL+TPRNK4vIWGLOkUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/bd7ed34274.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="../utilities/css/basics.css">
+	<title>Admin Sign Up</title>
+	<style>
+		.message{
+			font-weight: bolder;
+			text-align: center;
+			font-size: 16px;
+		}
+		body{
+			background:  linear-gradient(to bottom left, #013A79ff,#FECE23ff) no-repeat;
+		}
+		.admin_form{
+			max-width: 300px;
+			/* max-height: 300px; */
+		}
+.detail_box{
+    border: 0.5px solid #999;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+		.detail_input{
+			width: 100%;
+			padding-left: 10px;
+			border: none;
+			outline: none;
+			color: inherit;
+			background-color: inherit;
+		}
+		.button{
+			/* width: 100%; */
+			padding: 10px;
+			border-radius: 25px;
+			outline: none;
+			border: none;
+			font-size: 1.0rem;
+			background-color: #013A79ff;
+			color: white;
+			font-weight: bolder;
+			font-size: 1.25rem;
+		}
+	</style>
+</head>
+<body class="d-flex justify-content-center align-items-center">
+<div ng-app = "Register" ng-controller = "Register_control" class="d-flex flex-column justify-content-center align-items-center">
+	<h1 class="h2 text-center fw-bolder" style="color: var(--yale-blue);">Sign Up</h1>
+	<div ng-include = "'admin_register_form.html'"  class="admin_form"></div>
+	
+	<div ng-class="{'weak': true, 'message':true}" ng-show = "(form.register_user.$submitted || (form.register_user.name.$dirty || form.register_user.pass.$dirty || form.register_user.cPass.$dirty)) && (form.register_user.name.$error.required || form.register_user.pass.$error.required || form.register_user.cPass.$error.required)"> Fill Empty field with red border </div>
+
+	<div ng-class="{'weak': true, 'message':true}" ng-show = "form.register_user.name.$error.usernamePattern2 && form.register_user.name.$error.usernameExist === undefined"> Username should Start with an Alphabet only </div>
+
+	<div ng-class="{'weak': true, 'message':true}" ng-show = "form.register_user.name.$error.usernamePattern3 && form.register_user.name.$error.usernameExist === undefined"> Username cannot end with a . </div>
+
+	<div ng-class="{'weak': true, 'message':true}" ng-show = "form.register_user.name.$error.usernamePattern && form.register_user.name.$error.usernameExist === undefined"> Username can have only a to z, A to Z, 0 to 9 or  _ .</div>
+
+	<div ng-class="{'weak': true, 'message':true}" ng-show="(form.register_user.$submitted || form.register_user.name.$dirty) && form.register_user.name.$error.minlength"> Please create a  username with atleast 4 characters </div>
+
+	<div ng-class = "{'message':true, 'weak':true}" ng-show="form.register_user.name.$error.usernameExist"> Username Unavailable </div>
+
+	<div ng-if="strength === 'weak' && form.register_user.pass.$error.required === undefined" ng-class = "{'message':true, 'weak':true}"> Password Weak </div>
+
+	<div ng-class="{'weak': true, 'message':true}" ng-show = "form.register_user.cPass.$dirty && form.register_user.cPass.$error.compareTo"> confirm password and Password does not match </div>
+
+	<p ng-class = "{'message':true, 'strong':true}" ng-show="add"> Registered User Successfully !! </p>
+	<p ng-class = "{'message':true, 'weak':true}" ng-show="fail"> Registration Failed !! </p>
+</div>
+
+</body>
+
+<script type="text/javascript" src="../utilities/js/admin_register.js"></script>
+<script>
+	function minHeight(){
+		let viewportHeight = window.innerHeight;
+		// console.log(viewportHeight);
+		// console.log(typeof viewportHeight);
+		document.body.style.minHeight = viewportHeight + "px";
+	}
+	window.addEventListener('load', minHeight);
+	window.addEventListener('resize', minHeight);
+</script>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="./node_modules/angular/angular.min.js"></script>
+    <title> Results </title>
+    <script src="https://kit.fontawesome.com/bd7ed34274.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./utilities/css/basics.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <style>
+        th, td {
+      padding: 10px; /* Adjust the value as needed */
+      text-align: center; /* Optional: Align text within the th */
+      border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+    }
+    body{
+        height: 100%;
+        background:  linear-gradient(to bottom left, #013A79ff,#FECE23ff) no-repeat;
+
+    }
+    .bold{font-weight: bold;}
+    .input_error{
+        border: 2.5px solid var(--error_color) !important;
+        outline: none;
+    }
+    .detail_input{
+        width: 100%;
+        padding: 5px 10px;
+        border: none;
+        outline: none;
+        color: #013A79ff;
+        background-color: inherit;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .form{
+        padding: 10px;
+        /* border: 1px solid #000; */
+        /* background-color: var(--beige); */
+    }
+    .detail_box{
+        border: 0.5px solid #999;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: beige;
+    }
+    #getResult{
+        /* width: 100%; */
+        padding: 10px;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        font-size: 1.0rem;
+    }
+    .buttons_box{
+        justify-content: space-evenly;
+    }
+    .names_item{
+        width: 33.3333333333%;
+        padding: 10px;
+    }
+    .display{
+        max-width: 720px;
+        width: 100%;
+        /* margin-top: 25px; */
+        /* padding: 0px 15px 15px; */
+        /* margin: 15px; */
+        padding: 15px;
+        /* height: 100%; */
+        background-color: white;
+        border-radius: 12px;
+        color: #013A79ff;
+    }
+    #input{
+        /* max-width: 325px; */
+        /* max-height: 250px; */
+    }
+    .errors{
+        color:var(--error_color);
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        width: 100%;
+    }
+    .names_item{
+        font-weight: bolder;
+    }
+	/* .admin_form{
+		max-width: 400px;
+		max-height: 300px;
+        min-width:395px;
+	} */
+		@media screen and (max-width:607px) {
+            .names{
+                flex-direction: column;
+            }
+            .names_item{
+                width: 100%;
+            }
+		}
+		@media screen and (max-width:288px) {
+
+		}
+		@media screen and (min-width:289px) and (max-width:576px) {
+		}
+		
+		@media screen and (min-width:577px) and (max-width:768px) {
+			body{
+                /* height: 100% !important; */
+            }
+            .display{
+                margin: 30px;
+            }
+            body::before{
+                overflow: scroll;
+            }
+		}
+		
+		@media screen and (min-width:769px) and (max-width:992px) {
+			
+		}
+		
+		@media screen and (min-width:993px) and (max-width:1200px) {
+			
+		}
+    </style>
+</head>
+<body class="d-flex">
+    <!-- <div ng-app="result_portal" ng-controller="result_control" class="wh-100"> -->
+        <div ng-app="result_portal" ng-controller="result_control" class="wh-100 ng-scope d-flex justify-content-center">
+        <div ng-show="input" id="input" class="d-flex wh-100 admin_form align-items-center justify-content-center">
+            <!-- <div class="flex resultForm h-100 w-75"> -->
+                <form name="form.result" method="POST" ng-submit="form.result.$valid && getResult()" novalidate class="flex flex-column flex-start form">
+                    <!-- <label for="reg_no">
+                        Reg. No. 
+                    </label>
+                    <p><input type="text" id="reg_no" name="reg_no" ng-model="student.reg_no" ng-pattern="/[0-9]/" ng-class="{input_error: (form.result.$submitted || form.result.reg_no.$dirty) && (form.result.reg_no.$error.required || form.result.reg_no.$error.pattern)}" required/></p> -->
+                    <h1 class="text-center fw-bolder m-4" style="color: #013A79ff;">Result</h1>
+                    
+                    <div class="detail_box align-items-center d-flex m-2" ng-class="{input_error: (form.result.$submitted || form.result.reg_no.$dirty) && (form.result.reg_no.$error.required || form.result.reg_no.$error.pattern)}" style="color: #013A79ff;">
+                        <label for="reg_no">
+                            <i class="fas fa-id-card"></i>
+                        </label>
+                        <input type="text" id="reg_no" name="reg_no" ng-model="student.reg_no" ng-pattern="/^[0-9]+$/"  class="detail_input" placeholder="Enter Reg.No. here" required/>
+                    </div>
+                    <div class="buttons_box d-flex w-100 align-items-center">
+                        <!-- <a href="index.html"><i class="fa-solid fas fa-house " style="font-size:30px; color: #013A79ff;"></i></a> -->
+                        <a href="index.html" class="m-2"><i class="fa-solid fas fa-house fa-home " style="font-size:30px; color: #013A79ff;"></i></a>
+
+                        <!-- <button type="submit" class="align_auto w-50 margin-5-tb  beige" id="getResult" style="background-color: #013A79ff;color:beige;">Get Result</button> -->
+                        <button type="submit" class="w-50 m-2 fw-bold" id="getResult" style="background-color: #013A79ff;color:beige;">Get Result</button>
+                    </div>
+                    
+                    <p ng-show="info" class="errors message m-2">Enter correct Reg.No.</p>
+
+                    <p ng-show="empty" class="errors m-2">Result not declared</p>
+
+                    <p ng-show="(form.result.$submitted || form.result.reg_no.$dirty) && form.result.reg_no.$error.required" class="errors m-2">
+                        Reg No is required
+                    </p>
+
+                    <p ng-show="form.result.reg_no.$dirty && form.result.reg_no.$error.pattern" class="errors m-2">
+                        Reg No is number
+                    </p>
+                </form>
+                <!-- <p>{{form.result.$valid}}</p> -->
+            <!-- </div> -->
+        </div>
+        <div ng-show="display" class="display">
+            <!-- <div ng-repeat="(key, value) in studentData">
+                <p ng-if="key != 'result'">{{key}} : {{value}}
+                    <br>
+                    <div ng-repeat="(k, v) in {{JSON.parse(value)}}">{{k}} : {{v}}</div>
+                </p>
+
+            </div> -->
+            <span class="names_item" style="padding: 10px;">Reg.No. :- {{studentData.reg_no}}</span>
+            <div class="names d-flex w-100 font-weight-bold">
+                <span class="names_item">First Name : {{studentData.first_name.toUpperCase()}}</span>
+                <span class="names_item" ng-if="studentData.middle_name != ''">Middle Name : {{studentData.middle_name.toUpperCase()}}</span>
+                <span class="names_item" ng-if="studentData.middle_name == ''">Middle Name : - </span>
+                <span class="names_item">Last Name : {{studentData.last_name.toUpperCase()}}</span>
+            </div>
+
+            
+            <!-- <p>Middle Name : {{studentData.middle_name}}</p> -->
+            <span class="names_item  bolder" style="padding: 0px 10px 10px;">Class : {{class.toUpperCase()}}</span>
+            <table class="w-100" style="margin: 10px 0px;">
+                <tr class="font-weight-bold" style="background-color: #013A79ff; color: beige;">
+                    <th rowspan="2">Subjects</th>
+                    <th colspan="2">Marks</th>
+                </tr>
+                <tr class="bg-beige bold">
+                    <!-- <td></td> -->
+                    <td>Got</td>
+                    <td>Out off</td>
+                </tr>
+                <!-- <div > -->
+                    {{k}} : {{v}}
+                        <tr ng-repeat="(k,v) in result">
+                            <td ng-if="k != 'total' && k != 'percent' && k != 'grade'">{{k.toUpperCase()}}</td>
+                            <td ng-if="k == 'total' || k == 'percent' ||k == 'grade'" class="bold">{{k.toUpperCase()}}</td>
+                            <!-- <td></td> -->
+                            <!-- <td></td> -->
+                            <td ng-if="k != 'percent' && k != 'total' && k != 'grade'">{{v}}</td>
+                            <td ng-if="k == 'percent'" class="bold">{{v}} %</td>
+                            <td ng-if="k == 'total' || k == 'grade'" class="bold">{{v}}</td>
+                            <!-- <td>100</td> -->
+                            <td ng-show="k != 'grade' && k != 'total'" class="bold">100</td>
+                            <td ng-if="k == 'total'" class="bold">600</td>
+                            <td ng-if="k == 'grade'"></td>
+                        </tr>
+                <!-- </div> -->
+            
+            </table>
+            <button type="button" style="width: 34px;height: 24px; border: none; background-color: transparent;" ng-click="reset()"> <i class="fa-solid fas fa-backward" style="font-size: 1.75rem;color: var(--yale-blue);"></i> </button>
+        </div>
+        <!-- <p>{{result}}</p> -->
+    </div>
+    <script src="./utilities/js/student_result.js"></script>
+    <script>
+        function minHeight(){
+            let viewportHeight = window.innerHeight;
+            // console.log(viewportHeight);
+            // console.log(typeof viewportHeight);
+            // document.body.style.height = "100%";
+            document.body.style.height = viewportHeight + "px";
+        }
+        window.addEventListener('load', minHeight);
+        window.addEventListener('resize', minHeight);
+    </script>
+</body>
+</html>

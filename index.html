@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Homepage</title>
+	<link rel="stylesheet" href="./utilities/css/basics.css">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+	<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+	<style>
+		/* .question{
+			margin: 0px !important;
+			padding: 10px 0px;
+		}
+		body{
+			background-color: var(--white);
+			height: 100vh;
+			overflow: hidden;
+		}
+		.question{
+			color: var(--cerulean);
+		}
+		.content{
+			justify-content: space-evenly;
+			align-items: center;
+		}
+		.left, .right{
+			justify-content: center;
+			align-items: center;
+			justify-content: center;
+		}
+		.btn{
+			background-color: violet;
+			background-color: var(--cerulean);
+			border: none;
+			outline: none;
+			border-radius: 10px;
+			height: 30%;
+		}
+		.link{
+			text-decoration: none;
+			justify-content: center;
+			align-items:  center;
+		}
+		@media screen and (max-width:288px) {
+			.content{
+				flex-direction: column;
+			}
+			.question{
+				font-size: 3rem;
+			}
+			.link{
+				font-size: 2rem;
+			}
+			.left, .right{
+				width: 100%;
+				margin: 5px 10px 0px;
+			}
+			.btn, .link{
+				height: 50% !important;
+			}
+
+		}
+		@media screen and (min-width:289px) and (max-width:576px) {
+			.content{
+				flex-direction: column;
+			}
+			.question{
+				font-size: 3rem;
+			}
+			.link{
+				font-size: 3rem;
+			}
+			.left, .right{
+				width: 100%;
+				margin: 5px 10px 0px;
+			}
+			.btn, .link{
+				height: 50% !important;
+			}
+
+		}
+		
+		@media screen and (min-width:577px) and (max-width:768px) {
+			.question{
+				font-size: 6rem;
+			}
+			.link{
+				font-size: 3rem;
+			}
+
+		}
+		
+		@media screen and (min-width:769px) and (max-width:992px) {
+			.question{
+				font-size: 8rem;
+			}
+			.link{
+				font-size: 3.8rem;
+			}
+		}
+		
+		@media screen and (min-width:993px) and (max-width:1200px) {
+			.question{
+				font-size: 10rem;
+			}
+			.link{
+				font-size: 5.5rem;
+			}
+		}
+
+		@media screen and (min-width:1201px) {
+			.question{
+				margin: 55px 0px;
+			}
+		} */
+		
+		:root{
+			--boxHeight: clamp(20%, 37%, 75%);
+		}
+		#context{
+			margin: 12px 0px !important;
+			height: 75%;
+			/* align-items: center; */
+			/* justify-content: space-evenly; */
+		}
+		.boxContainer{
+			width: 75%;
+			height: var(--boxHeight);
+			/* background-color: var(--yale-blue); */
+			border: none;
+			/* border-radius: 15px; */
+		}
+		.option{
+			border: none;
+			background-color: var(--yale-blue);
+			border-radius: 15px;
+			/* font-size: 3rem; */
+		}
+		.redirect{
+			display: block;
+			color: white;
+			text-decoration: none;
+			width: 100%;
+			/* font-size: 5rem; */
+		}
+		.question{
+			color: var(--yale-blue);	
+		}
+		@media screen and (max-width:768px) {
+			.contextCol{
+				/* width: 100%; */
+				height: 50%;
+			}
+			.boxContainer{
+				width: 75%;
+				height: 50%;
+				/* background-color: var(--yale-blue); */
+				border: none;
+				/* border-radius: 15px; */
+			}
+		}
+		@media screen and (max-width:576px) {
+			.redirect{
+				font-size: 2.75rem;
+			}
+			.question{
+				font-size: 3.25rem;
+			}
+		}
+		@media screen and (min-width:577px) and (max-width:768px) {
+			.redirect{
+				font-size: 5.5rem;
+			}
+			.question{
+				font-size: 6rem;
+			}
+			#context{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		@media screen and (min-width:769px) and (max-width:992px) {
+			.redirect{
+				font-size: 3.5rem;
+			}
+			.question{
+				font-size: 6.75rem;
+			}
+		}
+		@media screen and (min-width:993px) and (max-width:1200px) {
+			.redirect{
+				font-size: 4.75rem;
+			}
+			.question{
+				font-size: 9.75rem;
+			}
+		}
+		@media screen and (min-width:1201px) {
+			.redirect{
+				font-size: 6rem;
+			}
+			.question{
+				font-size: 11.5rem;
+			}
+		}
+	</style>
+</head>
+<body class="d-flex justify-content-center align-items-center">
+
+<div class="container-fluid wh-100">
+	
+	<div id="header" class="header">
+		<h1 class="question text-center">Are You A...?</h1>
+	</div>
+	<div class="row" id="context">
+
+		<div class="col-md-6 contextCol d-flex wh-100 align-items-center justify-content-center">
+			<div class="boxContainer">
+				<button type="button" class="wh-100 option">
+					<a class="redirect poppins-black-italic" href="student_display_result.html">Student</a>
+				</button>
+			</div>
+		</div>
+
+		<div class="col-md-6 contextCol d-flex wh-100 align-items-center justify-content-center">
+			<div class="boxContainer wh-100">
+				<button type="button" class="wh-100 option">
+					<a href="./backend/admin_login.html" class="redirect poppins-black-italic">Admin</a>
+				</button>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+<script>
+	// Function to update the viewport height when the window is resized
+	const body = document.body;
+	// console.log(body);
+	function updateViewportHeight() {
+		var viewportHeight = window.innerHeight;
+		// console.log("Viewport height: " + viewportHeight + "px");
+		let height = parseFloat(viewportHeight);
+		body.style.height = height + "px";
+		return height;
+	}
+
+	const header = document.getElementById('header');
+	const context = document.querySelector('#context');
+
+	let headerHeight;
+	let screenHeight;
+	let contextHeight;
+
+	function contextsHeight() {
+		screenHeight = updateViewportHeight();
+		headerHeight = header.offsetHeight;
+		contextHeight = screenHeight - headerHeight;
+		// console.log( typeof screenHeight);
+		// console.log(typeof headerHeight);
+		// context.forEach((context)=>{
+			context.style.height = contextHeight + 'px';
+		// });
+	}
+
+
+	// Listen for the resize event and call the updateViewportHeight function
+	window.addEventListener('load', updateViewportHeight);
+	window.addEventListener("resize", updateViewportHeight);
+	window.addEventListener('load', contextsHeight);
+	window.addEventListener('resize', contextsHeight);
+
+</script>
+<!-- <script>
+	function minHeight(){
+		let viewportHeight = window.innerHeight;
+		// console.log(viewportHeight);
+		// console.log(typeof viewportHeight);
+		document.body.style.minHeight = viewportHeight + "px";
+	}
+	window.addEventListener('load', minHeight);
+</script> -->
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="../node_modules/angular/angular.min.js"></script>
+    <script src="https://kit.fontawesome.com/bd7ed34274.js" crossorigin="anonymous"></script>
+	<title>Admin Sign In</title>
+	<link rel="stylesheet" href="../utilities/css/basics.css">
+	<link rel="stylesheet" href="../utilities/css/admin_login.css">
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<style>
+		body{
+			/* padding: 12px !important; */
+		}
+	</style>
+</head>
+<body class=" d-flex justify-content-center align-items-center ">
+
+<div ng-app = "Login" ng-controller = "Login_control" class="">
+	<h1 class="h2 text-center fw-bolder" style="color: var(--yale-blue);">Sign In</h1>
+	<div ng-include = "'admin_login_form.html'" class="admin_form"></div>
+</div>
+</body>
+
+<script type="text/javascript" src="../utilities/js/admin_login.js"></script>
+<script>
+	function minHeight(){
+		let viewportHeight = window.innerHeight;
+		// console.log(viewportHeight);
+		// console.log(typeof viewportHeight);
+		document.body.style.minHeight = viewportHeight + "px";
+	}
+	window.addEventListener('load', minHeight);
+</script>
+</html>

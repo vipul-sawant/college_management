@@ -1,0 +1,226 @@
+.row{
+    padding-bottom: 12px;
+}
+.logo{
+    max-width: 100px;
+    max-height: 100px;
+    width: 100%;
+    height: 100%;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* margin-bottom: 60px; */
+    /* height: 100%; */
+}
+.sidebar{
+    max-width: 190px;
+    width:100%;
+    /* background-color: var(--cerulean); */
+    background-color:#013A79ff;
+    /* background-color: #005555ff; */
+}
+#container{
+    width: 100vw;
+}
+.link{
+    text-decoration: none;
+    font-weight: bold;
+    /* font-size: 1rem; */
+    color: beige;
+    transition: font-size 0.5s ease-in;
+}
+.link:hover{
+    font-size: 1.15rem;
+    color: #FECE23ff;
+}
+.col-md-6{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
+
+.col-sm-6{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
+.className{
+    font-weight: bold;
+    /* margin: 8px 0px; */
+    /* padding: 0px; */
+    font-size: 1.25rem;
+}
+.college_text{
+    font-size: 4.75rem;
+}
+/* .show{
+    margin: 12px;
+} */
+.view{
+    padding: 12px;
+    border: none;
+    outline: none;
+    /* background-color: #007ba7; */
+    background-color: beige;
+    /* color: beige; */
+    /* color: #007ba7; */
+    color: #013A79ff;
+    font-weight: bold;
+    border-radius: 12px;
+    width: 50%;
+}
+.college{
+    max-width: 350px;
+    height: 150px;
+    margin: 10px 0px 0px;
+    border: none;
+    outline: none;
+    padding: 12px;
+    /* padding: 50px 0px; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 15px;
+    /* background-color: #CAAF35ff; */
+    /* background-color: #005555ff; */
+    /* background-color: #9B9345ff; */
+    background-color: #FECE23ff;
+}
+@media screen and (max-width:768px) {
+    #container{
+        flex-direction: column !important;
+    }
+    .sidebar{
+        max-width: 100%;
+        display: flex;
+        flex-direction: row !important;
+    }
+    .logo{
+        flex:1;
+    }
+    .sidebar_item{
+        height: auto !important;
+        max-width: 100%;
+        /* width: 100% !important; */
+        flex: 1;
+        /* flex-grow: 1; */
+        /* flex-shrink: 1; */
+        flex-direction: row-reverse !important;
+        justify-content: space-evenly !important;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:768px) {
+    .college{
+        max-width: 486px !important;
+        width: 100%;
+        margin: 12px auto 0px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .box{
+        max-width:285px;
+    }
+    .box:hover{
+        max-width: 300px;
+    }
+    .col-md-6{
+        height: 160px;
+    }
+    .college{
+        height: 160px;
+        max-width: 100% !important;
+    }
+    .college>h1{
+        font-size: 3rem !important;
+    }
+    .classes{
+        font-size: 2.75rem;
+        text-align: center;
+    }
+    .className{
+        font-size: 1.75rem;
+    }
+    .view{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .box{
+        max-width:396px;
+    }
+    .box:hover{
+        max-width: 415px;
+    }
+    .col-md-6{
+        height: 220px;
+    }
+    .classes{
+        font-size: 3rem;
+    }
+    .className{
+        font-size: 2.5rem;
+    }
+    .view{
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:992px){
+    .box{
+        max-width: 250px;
+        /* transition: width 5s ease-in-out; */
+    }
+    .box:hover{
+        max-width: 270px;
+        max-height: 130px;
+        height: 129px;
+    }
+    .col-md-6{
+        height: 135px;
+    }
+    .college_text{
+        font-size: 1.5rem !important;
+        font-weight: bolder;
+    }
+}
+
+@media screen and (min-width:993px){
+    .box{
+        max-width: 330px;
+    }
+    .box:hover{
+        max-width: 350px;
+        /* height: 200px; */
+    }
+    .col-md-6{
+        height: 180px;
+    }
+    .college_text{
+        font-size: 2.5rem !important;
+        font-weight: bolder;
+    }
+}
+
+/* @media screen and (min-width:1201px) and (max-width:1400px) {
+    .box{
+        max-width: 440px;
+    }
+    .col-md-6{
+        height: 230px;
+    }
+}
+
+@media screen and (min-width:1401px){
+    .box{
+        max-width: 480px;
+    }
+    .col-md-6{
+        height: 270px;
+    }
+ } */
