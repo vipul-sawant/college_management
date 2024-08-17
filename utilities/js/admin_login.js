@@ -33,7 +33,7 @@ app.controller('Login_control', function($scope, $http, $window, $location){
 			} else {
 				$scope.wrong_uname = false;
 				$scope.wrong_pass = false;
-				$window.location.href = "/johnjrcollege/backend/new_dashboard.php";
+				$window.location.href = "new_dashboard.php";
 			}
 		};
 		$http.post("admin_login.php",$scope.user).then(after_login);
